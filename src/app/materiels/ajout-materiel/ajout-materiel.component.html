@@ -1,0 +1,53 @@
+<div class="content">
+    <form (ngSubmit)="addMateriel(_materielService.materiel)" #MaterielForm="ngForm">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Matricule</label>
+                    <input type="text" class="form-control border-input" disabled placeholder="Matricule" name="idMateriel" [(ngModel)]="_materielService.materiel.idMateriel"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" class="form-control border-input" placeholder="Nom " name="nomMateriel" #nomMateriel="ngModel" [(ngModel)]="_materielService.materiel.nomMateriel" required>
+                    <div class="validation-error" *ngIf="nomMateriel.invalid && nomMateriel.touched">
+                      Ce champ est obligatoire
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label >Quantites</label>
+                    <input type="number" class="form-control border-input" placeholder="Quantites " name="quantite" #quantite="ngModel" [(ngModel)]="_materielService.materiel.quantite">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+              <div class="form-group">
+                  <label >Prix</label>
+                  <input type="number" class="form-control border-input" placeholder="Prix en dt" name="prix" #prix="ngModel" [(ngModel)]="_materielService.materiel.prix">
+              </div>
+          </div>
+          <div class="col-md-4">
+            <label>Etat </label>
+            <select class="form-control form-control-lg"  #etat="ngModel" [(ngModel)]="_materielService.materiel.etat" name="etat">
+              <option  selected>Open this select menu</option>
+              <option value= true>Bonne</option>
+              <option value= false>Defectueuse</option>
+            </select>
+          </div>
+        </div>
+
+
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-info btn-fill btn-wd">Ajouter</button>
+        </div>
+    </form>
+</div>

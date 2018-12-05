@@ -1,0 +1,106 @@
+<div class="col-md-2">
+
+</div>
+<div class="card col-sm-8">
+    <div class="header">
+        <h4 class="title">Ajouter un nouveau client </h4>
+    </div>
+    <div class="content">
+        <form (ngSubmit)="addClient(_clientService.client)" #ClientForm="ngForm">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Matricule</label>
+                        <input type="text" class="form-control border-input" disabled placeholder="Matricule" name="idClient" [(ngModel)]="_clientService.client.idClient"/>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>CIN </label>
+                        <input type="number" class="form-control border-input" placeholder="CIN" name="cin" #cin="ngModel" [(ngModel)]="_clientService.client.cin">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" class="form-control border-input" placeholder="Nom " name="nomClient" #nomClient="ngModel" [(ngModel)]="_clientService.client.nomClient" required>
+                        <div class="validation-error" *ngIf="nomClient.invalid && nomClient.touched">
+                          Ce champ est obligatoire
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Prenom</label>
+                        <input type="text" class="form-control border-input" placeholder="Prenom" name="prenomClient" #prenomClient="ngModel" [(ngModel)]="_clientService.client.prenomClient"required>
+                        <div class="validation-error" *ngIf="prenomClient.invalid && prenomClient.touched">
+                          Ce champ est obligatoire
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Adresse mail</label>
+                      <input type="email" class="form-control border-input" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="_clientService.client.email">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Contact</label>
+                      <input type="tel" class="form-control border-input" placeholder="Numero de télephone" name="numeroTelephone" #dateNaissance="ngModel" [(ngModel)]="_clientService.client.numeroTelephone">
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Sexe </label>
+                <select class="form-control form-control-lg"  #sexe="ngModel" [(ngModel)]="_clientService.client.sexe" name="sexe">
+
+                  <option value="homme">Homme</option>
+                  <option value="femme">Femme</option>
+
+                </select>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label>Date de naissance </label>
+                      <input type="date" class="form-control border-input" placeholder="Date de naissance" name="dateNaissance" #dateNaissance="ngModel" [(ngModel)]="_clientService.client.dateNaissance">
+                  </div>
+              </div>
+
+              <div class="col-md-4">
+                <label>Type </label>
+                <select class="form-control form-control-lg"  #typeClient="ngModel" [(ngModel)]="_clientService.client.typeClient" name="typeClient">
+                  <option value="amateur">Amateur</option>
+                  <option value="professionel">Professionel</option>
+
+                </select>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Addresse</label>
+                        <input type="text" class="form-control border-input" name="adresse" placeholder="Adresse " #adresse="ngModel" [(ngModel)]="_clientService.client.adresse" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Photo</label>
+                        <input type="file" class="form-control border-input" name="urlPhoto" placeholder="Photo " #urlPhoto="ngModel" [(ngModel)]="_clientService.client.urlPhoto" />
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-info btn-fill btn-wd">Ajouter</button>
+            </div>
+        </form>
+    </div>
+</div>

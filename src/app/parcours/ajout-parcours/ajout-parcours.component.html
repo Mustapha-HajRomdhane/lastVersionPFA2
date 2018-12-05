@@ -1,0 +1,107 @@
+<div class="col-sm-1">
+
+</div>
+<div class="card col-sm-10" >
+  <div class="header">
+      <h4 class="title">Ajouter un Parcours </h4>
+  </div>
+
+  <div class="content">
+      <form (ngSubmit)="addParcours(_parcoursService.parcours)" #ParcoursForm="ngForm">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label>Matricule</label>
+                      <input type="text" class="form-control border-input" disabled placeholder="Matricule" name="idParcours" [(ngModel)]="_parcoursService.parcours.idParcours"/>
+                  </div>
+              </div>
+              <div class="col-md-8">
+                  <div class="form-group">
+                      <label>Nom</label>
+                      <input type="text" class="form-control border-input" placeholder="Nom " name="nomParcours" #nomParcours="ngModel" [(ngModel)]="_parcoursService.parcours.nomParcours" required>
+                      <div class="validation-error" *ngIf="nomParcours.invalid && nomParcours.touched">
+                        *Ce champ est obligatoire
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label>Type Parcours </label>
+              <select class="form-control form-control-lg"  #typeParcours="ngModel" [(ngModel)]="_parcoursService.parcours.typeParcours" name="typeParcours">
+                <option  selected>Open this select menu</option>
+                <option value= "urbain">Urbain</option>
+                <option value= "hippique">Hippique</option>
+                <option value= "routier">Routier</option>
+                <option value= "altitude">D'altitude</option>
+              </select>
+            </div>
+
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label >Nombre de Trous</label>
+                      <input type="number" class="form-control border-input" placeholder="Nombre de trous  " name="nombreTrous" #nombreTrous="ngModel" [(ngModel)]="_parcoursService.parcours.nombreTrous">
+                      <div class="validation-error" *ngIf="nombreTrous.invalid && nombreTrous.touched">
+                        *Ce champ est obligatoire
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label >Longueur</label>
+                      <input type="number" class="form-control border-input" placeholder="Longueur en mètre" name="longueurEnMetre" #longueurEnMetre="ngModel" [(ngModel)]="_parcoursService.parcours.longueurEnMetre">
+                      <div class="validation-error" *ngIf="longueurEnMetre.invalid && longueurEnMetre.touched">
+                        *Ce champ est obligatoire
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label >Nombre Clients </label>
+                    <input type="number" class="form-control border-input" placeholder="MAX clients par parcours" name="nombreClients" #nombreClients="ngModel" [(ngModel)]="_parcoursService.parcours.nombreClients">
+                    <div class="validation-error" *ngIf="longueurEnMetre.invalid && longueurEnMetre.touched">
+                      *Ce champ est obligatoire
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label >Emplacement</label>
+                    <input type="text" class="form-control border-input" placeholder="Emplacement" name="emplacement" #emplacement="ngModel" [(ngModel)]="_parcoursService.parcours.emplacement">
+
+                </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label >Prix </label>
+                    <input type="number" class="form-control border-input" placeholder="Prix/ partie" name="prix" #prix="ngModel" [(ngModel)]="_parcoursService.parcours.prix">
+                    <div class="validation-error" *ngIf="prix.invalid && prix.touched">
+                      *Ce champ est obligatoire
+                    </div>
+                </div>
+            </div>
+              <div class="col-md-8">
+                  <div class="form-group">
+                      <label>Photo</label>
+                      <input type="file" class="form-control border-input" name="urlPhoto" placeholder="Photo " #urlPhoto="ngModel" [(ngModel)]="_parcoursService.parcours.urlPhoto" />
+
+                  </div>
+              </div>
+          </div>
+          <div class="text-center">
+              <button type="submit" class="btn btn-info btn-fill btn-wd" >Ajouter</button>
+          </div>
+      </form>
+  </div>
+
+</div>

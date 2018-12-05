@@ -1,0 +1,50 @@
+<div class="pricing-table ">
+  <div class="row">
+    <div>
+      <a class="btn col-md-3" style="float: right; " (click)="restartMateriel()" routerLink="/ajoutMateriel" routerLinkActive="active"><i ><i class="fa fa-plus"></i>Ajouter Materiel</i></a>
+    </div>
+    <br /><br /><br />
+  </div>
+</div>
+<div *ngFor="let c of materiels">
+
+
+  <div clas= "row exemple-card" >
+    <div class="col col-md-4 ">
+      <mat-card >
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title><strong> {{ c.nomMateriel | uppercase}}</strong></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/img/{{ c.urlImage}}"  alt="Photo of a Shiba Inu" style="height:200px;">
+        <mat-card-content>
+          <div class="text-center">
+              <div class="row col-md-16">
+                  <div class="col-md-6 ">
+                      <h5>{{ c.quantites}}<br /><small>Quantité</small></h5>
+                  </div>
+
+                  <div class="col-md-6">
+                      <h5>{{ c.prix }}<br /><small>DNT</small></h5>
+                  </div>
+              </div>
+          </div>
+        <br />
+                <p style="text-align:center;">
+                  <a >ACHETER</a>
+                </p>
+        </mat-card-content>
+        <mat-card-actions class="row" style="text-align:center;">
+          <div class="update col-md-6" style="width:50%;">
+      <a href="#update"><span class="fa fa-pencil-square-o"></span></a>
+          </div>
+        <div class="delete col-md-6" style="width:50%;">
+            <a href="#delete"><span class="fa fa-trash-o"></span></a>
+        </div>
+
+        </mat-card-actions>
+      </mat-card>
+  </div>
+  </div>
+
+</div>

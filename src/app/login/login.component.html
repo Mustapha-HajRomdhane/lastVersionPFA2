@@ -1,0 +1,47 @@
+
+
+<!-- <input type="tel" class="form-control border-input" placeholder="Numero de télephone" name="numeroTelephone" #dateNaissance="ngModel" [(ngModel)]="_clientService.client.numeroTelephone">
+-->
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="container col-md-5">
+      <div >
+
+          <img src="assets/img/logo.png" />
+    <h2>Se connecter</h2>
+      </div>
+
+      <form (submit)="loginUser($event)">
+        <div class="row">
+          <div class="col-md-10">
+              <div class="form-group">
+                  <input type="number" class="form-control border-input" placeholder="Identidiant" required>
+              </div>
+          </div>
+        </div>
+            <div class="row">
+              <div class="col-md-10">
+                  <div class="form-group">
+                      <input type="password" class="form-control border-input" placeholder="Mot de passe" required>
+                  </div>
+              </div>
+            </div>
+    <br />
+    <div class="col-md-1">
+
+    </div>
+      <div class="col-md-8">
+    <input  type="submit" class="btn btn-info btn-fill btn-wd btn-block" style="float:right; background:#04293c;" value="se connecter"/>
+      </div>
+
+
+      </form>
+      <br /><br /><br />
+      <br /><br /><br />
+      <br />
+    </div>
+
+  </div>
+
+</div>

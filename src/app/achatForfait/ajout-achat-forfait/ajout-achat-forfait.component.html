@@ -1,0 +1,58 @@
+<div class="col-md-2">
+
+</div>
+<div class="card col-sm-8">
+  <div class="header">
+    <h4 class="title">Ajouter un achat </h4>
+  </div>
+  <div class="content">
+    <form (ngSubmit)="addClient(_clientService.client)" #ClientForm="ngForm">
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>ID client </label>
+            <input type="number" class="form-control border-input" placeholder="id client" name="idClient" #cin="ngModel" [(ngModel)]="_clientService.client.cin">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>ID forfait</label>
+            <input type="number" class="form-control border-input" placeholder="id forfait" name="idForfait" #nomClient="ngModel" [(ngModel)]="_clientService.client.nomClient" required>
+            <div class="validation-error" *ngIf="nomClient.invalid && nomClient.touched">
+              Ce champ est obligatoire
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Date d'achat </label>
+            <input type="date" class="form-control border-input" placeholder="Date de naissance" name="dateNaissance" #dateNaissance="ngModel" [(ngModel)]="_clientService.client.dateNaissance">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Quantité</label>
+            <input type="number" class="form-control border-input" placeholder="" name="email" #email="ngModel" [(ngModel)]="_clientService.client.email">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label>Paiement </label>
+          <select class="form-control form-control-lg"  #etat="ngModel" [(ngModel)]="_materielService.materiel.etat" name="etat">
+            <option  selected>Ce forfait est..</option>
+            <option value= true>Payé</option>
+            <option value= false>Non</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-info btn-fill btn-wd">Ajouter</button>
+      </div>
+    </form>
+  </div>
+</div>

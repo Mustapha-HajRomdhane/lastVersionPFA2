@@ -1,0 +1,65 @@
+<div class="col-md-2">
+
+</div>
+<div class="card col-sm-8">
+  <div class="header">
+    <h4 class="title">Ajouter un achat </h4>
+  </div>
+  <div class="content">
+    <form (ngSubmit)="addAchatParcours(_achatParcoursService.achatParcours,_achatParcoursService.idAchat )" #AchatParcoursForm="ngForm">
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>ID client </label>
+            <input type="number" class="form-control border-input" placeholder="id client" name="idClient" #idClient="ngModel" [(ngModel)]="_achatParcoursService.idAchat.idClient" required>
+            <div class="validation-error" *ngIf="idClient.invalid && idClient.touched">
+              Ce champ est obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>ID Parcours</label>
+            <input type="number" class="form-control border-input" placeholder="id Parcours" name="idParcours" #idParcours="ngModel" [(ngModel)]="_achatParcoursService.idAchat.idParcours" required>
+            <div class="validation-error" *ngIf="idParcours.invalid && idParcours.touched">
+              Ce champ est obligatoire
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Date d'achat </label>
+            <input type="date" class="form-control border-input" placeholder="Date d'achat" name="dateAchat" #dateAchat="ngModel" [(ngModel)]="_achatParcoursService.achatParcours.dateAchat">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label >Passage valide</label>
+            <select class="form-control form-control-lg"  name="passageValide" #passageValide="ngModel" [(ngModel)]="_achatParcoursService.achatParcours.passageValide" >
+              <option  selected>Le passage client est ..</option>
+              <option value= true>Validé </option>
+              <option value= false>Non</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label>Paiement </label>
+          <select class="form-control form-control-lg"  #paye="ngModel" name="paye" [(ngModel)]="_achatParcoursService.achatParcours.paye" >
+            <option  selected>Cet achat est..</option>
+            <option value= true>Payé</option>
+            <option value= false>Non</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-info btn-fill btn-wd">Ajouter</button>
+      </div>
+    </form>
+  </div>
+</div>

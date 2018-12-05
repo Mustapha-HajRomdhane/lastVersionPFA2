@@ -1,0 +1,56 @@
+<div class="pricing-table ">
+    <div class="row">
+      <br />
+      <div>
+        <a class="btn col-md-3" style="float: right; left:-30px;" (click)="restartForfait()" routerLink="/ajoutForfait" routerLinkActive="active"><i ><i class="fa fa fa-plus-circle"></i>Ajouter Forfait</i></a>
+      </div>
+      <br /><br /><br /> <br />
+      <div class="justify-content-md-center ">
+
+        <div *ngFor="let c of forfaits">
+         <div class="col-md-5 col-lg-4">
+           <div class="item">
+             <div class="heading">
+               <h3>{{c.nomForfait}}</h3>
+             </div>
+
+             <div class="features">
+               <h4><span class="feature"> </span> </h4>
+               <h4><span class="feature"> </span></h4>
+               <h4><span class="feature"> </span> </h4>
+             </div>
+             <div class="price">
+               <h4>{{c.prix}} TND</h4>
+             </div>
+             <button class="btn btn-block btn-outline-primary" type="submit">ACHETER</button>
+           </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+          <!--
+          <div *ngFor="let c of forfaits">
+           <div class="col-md-5 col-lg-4">
+             <div class="item">
+               <div class="heading">
+                 <h3>{{c.nomForfait}}</h3>
+               </div>
+
+               <div class="features">
+                 <h4><span class="feature"> id forfait  :  {{c.idForfait}}</span> </h4>
+                 <h4><span class="feature">nombre de troue : {{c.nombreTroues}}</span></h4>
+                 <h4><span class="feature"> </span> </h4>
+               </div>
+               <div class="price">
+                 <h4>{{c.prix}}dinars</h4>
+               </div>
+               <button class="btn btn-block btn-outline-primary" type="submit">BUY NOW</button>
+             </div>
+           </div>
+           <br />
+          </div>
+        -->

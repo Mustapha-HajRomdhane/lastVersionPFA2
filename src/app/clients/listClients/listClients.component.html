@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                  <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="title">Liste des clients</h3>
+                    </div>
+                    <div>
+                      <a class="btn col-md-3" style="float: right; " (click)="restartClient()" routerLink="/ajoutClient" routerLinkActive="active"><i ><i class="fa fa-user-plus"></i>Ajouter Client</i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                          <th>CIN</th> <th>Nom</th> <th>Prenom</th><th>Date Naissance</th><th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let c of clients">
+                            <td><a (click)="showClientForEdit(c)" routerLink="/client" routerLinkActive="active">{{c.cin}}</a></td>
+                            <td>{{c.nomClient}}</td>
+                            <td>{{c.prenomClient}}</td>
+                            <td>{{c.dateNaissance}}</td>
+                            <td>{{c.typeClient}} </td>
+                            <td>
+                              <a class="btn" (click)="showClientForEdit(c)" routerLink="/client" routerLinkActive="active"><i class="fa fa-pencil-square-o"></i></a>
+                              <a class="btn text-danger" (click)="deleteClient(c.idClient)"><i class="fa fa-trash-o"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>

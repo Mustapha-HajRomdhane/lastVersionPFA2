@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Listes des Personnels </h4>
+                    <p class="category">Here is a subtitle for this table</p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                               <th> ID </th> <th>CIN</th> <th>Nom</th> <th>Prenom</th><th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let c of personnels">
+                            <td><a (click)="showPersonnelForEdit(c)" routerLink="/personnel" routerLinkActive="active">{{c.idClient}}</a> </td>
+                            <td>{{c.cin}}</td>
+                            <td>{{c.nomPersonnel}}</td>
+                            <td>{{c.prenomPersonnel}}</td>
+                            <td>{{c.role}} </td>
+                            <td>
+                              <a class="btn" (click)="showPersonnelForEdit(c)" routerLink="/personnel" routerLinkActive="active"><i class="fa fa-pencil-square-o"></i></a>
+                              <a class="btn text-danger" (click)="deletePersonnel(c.idPersonnel)"><i class="fa fa-trash-o"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
